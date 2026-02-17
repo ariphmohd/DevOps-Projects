@@ -53,7 +53,7 @@ resource "aws_subnet" "private" {
 resource "aws_eip" "nat" {
   count = length(var.public_subnets)
   # vpc   = true | This has been deprecated in favor of using the "domain" argument
-  domain = "vpc"
+  #domain = "vpc"
 
   tags = {
     Name        = "${var.environment}-nat-eip-${count.index + 1}"

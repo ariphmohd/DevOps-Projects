@@ -33,7 +33,7 @@ resource "aws_db_instance" "main" {
   backup_window          = "03:00-04:00"
   maintenance_window     = "sun:04:00-sun:05:00"
 
-  skip_final_snapshot       = true
+  skip_final_snapshot       = true # Set to false if you want to keep a final snapshot before deletion
   final_snapshot_identifier = "${var.environment}-db-final-snapshot"
 
   deletion_protection = false
